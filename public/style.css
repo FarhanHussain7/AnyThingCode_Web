@@ -1,3 +1,9 @@
 a{
-    color: red !important;
+    color: rgb(38, 0, 255) !important;
+}
+.heading{
+    text-align: center;
+}
+.margin-bottom-15{
+    margin-bottom: 15;
 }
