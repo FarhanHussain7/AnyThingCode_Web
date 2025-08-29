@@ -22,7 +22,7 @@
     <input type="text" class="form-control" id="address" name="address" placeholder="enter your address">
 </div>
 <div class="col-6 offset-sm-3 margin-bottom-15">
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" name="signup" class="btn btn-primary">Submit</button>
 </div>
 </form>
 </div>
