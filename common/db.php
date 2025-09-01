@@ -10,7 +10,7 @@
     if($conn->connect_error){
         echo "Not Connected with DB ". $conn->connect_error;
     }else{
-        echo " Connected susscefully";
+        // echo " Connected susscefully";
     }
 
 ?>

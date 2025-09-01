@@ -3,8 +3,8 @@
 
     <form action="./server/signup.php" method="post">
   <div class="col-6 offset-sm-3 margin-bottom-15" >
-    <label for="username" class="form-label">User Name</label>
-    <input type="text" class="form-control" id="username" name="username" placeholder="enter your name">
+    <label for="username" class="form-label">Title </label>
+    <input type="text" class="form-control" id="username" name="title" placeholder="enter your name">
 </div>
 
   <div class="col-6 offset-sm-3 margin-bottom-15">
@@ -22,7 +22,7 @@
     <input type="text" class="form-control" id="address" name="address" placeholder="enter your address">
 </div>
 <div class="col-6 offset-sm-3 margin-bottom-15">
-  <button type="submit" name="signup" class="btn btn-primary">Submit</button>
+  <button type="submit" name="ask" class="btn btn-primary">Okay</button>
 </div>
 </form>
 </div>
