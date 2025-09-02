@@ -18,7 +18,7 @@
             <a class="nav-link" href="/PROJECT/logout.php">Logout</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/PROJECT/client/ask.php">Ask Question</a>
+            <a class="nav-link" href="?ask=true">Ask Question</a>
           </li>
         <?php
         } else {
