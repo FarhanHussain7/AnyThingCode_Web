@@ -18,8 +18,13 @@ if (isset($_GET['signUp']) && !$isLoggedIn) {
     include('./client/signUp.php');
 } elseif (isset($_GET['login']) && !$isLoggedIn) {
     include('./client/login.php');
-} else if($_GET['ask']){
-    include('./client/ask.php'); 
+} else if (isset($_GET['ask']) && $_GET['ask']) {
+    include('./client/ask.php');
+} else if (isset($_GET['q-id']) && $_GET['q-id']) {
+    $id = $_GET['q-id'];
+    include('./client/question-details.php');
+} else {
+    include('./client/question.php');
 }
 ?>
 </body>

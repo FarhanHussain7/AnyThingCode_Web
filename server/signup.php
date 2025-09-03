@@ -64,7 +64,8 @@ exit;
 
     $result = $question->execute();
     if ($result) {
-    echo "question submit";
+    // echo "question submit";
+    header("Location: /PROJECT/index.php");
     }else{
         echo "not submited";
     }
