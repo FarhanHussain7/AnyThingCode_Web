@@ -13,8 +13,12 @@
         echo "<h4 class='margin-bottom-15 question-title'> Question : ".$row['title']."</h4>
         <p class='margin-bottom-15'>".$row['description']."</p>";
     }
+    include('./client/answer.php');
     ?>
-    <textarea class="form-control margin-bottom-15" placeholder="Your answer......"></textarea>
-    <button class="btn btn-primary">write your answer</button>
+    <form action="./server/signup.php" method="post">
+        <input type="hidden" name="question_id" value="<?php echo $id ?>" >
+    <textarea name="answer" class="form-control margin-bottom-15" placeholder="Your answer......"></textarea>
+    <button class="btn btn-primary" >write your answer</button>
+    </form>
 </div>
 </div>

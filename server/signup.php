@@ -59,10 +59,13 @@ exit;
     $category_id = $_POST['category'];
     $user_id = $_SESSION['user']['user_id'];
 
-    $question = $conn->prepare("INSERT INTO question (`id`, `title`, `description`, `category_id`, `user_id`)
-     VALUES (NULL, '$title', '$description', '$category_id', '$user_id');");
+    // $question = $conn->prepare("INSERT INTO question (`id`, `title`, `description`, `category_id`, `user_id`)
+    //  VALUES (NULL, '$title', '$description', '$category_id', '$user_id');");
 
-    $result = $question->execute();
+    $stmt = $conn->prepare("INSERT INTO question (title, description, category_id, user_id) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssii", $title, $description, $category_id, $user_id);
+
+    $result = $stmt->execute();
     if ($result) {
     // echo "question submit";
     header("Location: /PROJECT/index.php");
@@ -70,6 +73,26 @@ exit;
         echo "not submited";
     }
 
-}
+}elseif (isset($_POST['answer'])) {
+    $answer = $_POST['answer'];
+    $question_id = $_POST['question_id'];
 
+    if (isset($_SESSION['user']) && isset($_SESSION['user']['user_id'])) {
+        $user_id = $_SESSION['user']['user_id'];
+
+        $query = $conn->prepare("INSERT INTO answer (`id`, `answer`, `question_id`, `user_id`) VALUES (NULL, ?, ?, ?)");
+        $query->bind_param("sii", $answer, $question_id, $user_id);
+
+        $result = $query->execute();
+        if ($result) {
+            // echo "answer submit";
+           header("Location: /PROJECT/index.php?q-id=$question_id");
+            exit;
+        } else {
+            echo "not submitted";
+        }
+    } else {
+        echo "User not logged in or session expired.";
+    }
+}
 ?>

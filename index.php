@@ -23,6 +23,9 @@ if (isset($_GET['signUp']) && !$isLoggedIn) {
 } else if (isset($_GET['q-id']) && $_GET['q-id']) {
     $id = $_GET['q-id'];
     include('./client/question-details.php');
+} else if (isset($_GET['c-id']) && $_GET['c-id']) {
+   $cid = $_GET['c-id'];
+    include('./client/question.php');
 } else {
     include('./client/question.php');
 }
