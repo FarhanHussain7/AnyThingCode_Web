@@ -20,6 +20,9 @@
           <li class="nav-item">
             <a class="nav-link" href="?ask=true">Ask Question</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?u-id=<?php echo $_SESSION['user']['user_id']; ?>">My Question</a>
+          </li>
         <?php
         } else {
         ?>
@@ -35,9 +38,17 @@
           <a class="nav-link" href="#">Category</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Latest Question</a>
+          <a class="nav-link" href="?latest=true">Latest Question</a>
         </li>
       </ul>
+
+      <!-- Right-aligned search form -->
+      <div class="ms-auto">
+        <form class="d-flex" action="">
+          <input class="form-control me-2" name="search" type="search" placeholder="Search questions">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
     </div>
   </div>
 </nav>

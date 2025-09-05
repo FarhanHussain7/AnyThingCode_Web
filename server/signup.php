@@ -94,5 +94,14 @@ $stmt->bind_param("ssii", $title, $description, $category_id, $user_id);
     } else {
         echo "User not logged in or session expired.";
     }
+}elseif(isset($_GET['delete'])){
+   echo $qid = $_GET['delete'];
+    $query = $conn->prepare("DELETE FROM question WHERE id = $qid");
+    $result = $query->execute();
+    if($result){
+header("Location: /PROJECT/index.php");
+    }else{
+        echo "Question Not deleted ";
+    }
 }
 ?>
